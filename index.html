@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ABC+ Maestro Player - High-performance musical notation and playback engine">
+    <title>ABC+ Maestro Player</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <header class="header">
+            <h1 class="logo">ABC+ <span class="logo-accent">Maestro</span></h1>
+            <div class="version-badge">v1.0.0</div>
+        </header>
+
+        <main class="main-content">
+            <section class="editor-section">
+                <div class="section-header">
+                    <h2>ABC+ Notation</h2>
+                    <div class="editor-actions">
+                        <button id="loadExample" class="btn btn-ghost">Load Example</button>
+                        <button id="clearEditor" class="btn btn-ghost">Clear</button>
+                    </div>
+                </div>
+                <textarea id="abcInput" class="abc-editor" placeholder="Paste your ABC+ notation here..."
+                    spellcheck="false"></textarea>
+            </section>
+
+            <section class="transport-section">
+                <div class="transport-controls glass">
+                    <button id="stopBtn" class="transport-btn" title="Stop (Reset)">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <rect x="6" y="6" width="12" height="12" rx="1" />
+                        </svg>
+                    </button>
+                    <button id="playPauseBtn" class="transport-btn transport-btn-primary" title="Play/Pause">
+                        <svg id="playIcon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                        <svg id="pauseIcon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"
+                            class="hidden">
+                            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                        </svg>
+                    </button>
+                    <div class="tempo-display">
+                        <span class="tempo-label">BPM</span>
+                        <span id="tempoValue" class="tempo-value">120</span>
+                    </div>
+                </div>
+                <div id="playerState" class="player-state">IDLE</div>
+            </section>
+
+            <section class="score-section">
+                <div class="section-header">
+                    <h2>Score</h2>
+                    <div class="score-actions">
+                        <button id="exportXML" class="btn btn-ghost" disabled>Export MusicXML</button>
+                        <button id="exportMIDI" class="btn btn-ghost" disabled>Export MIDI</button>
+                    </div>
+                </div>
+                <div id="scoreContainer" class="score-container">
+                    <div class="score-placeholder">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="currentColor" opacity="0.3">
+                            <path
+                                d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
+                        </svg>
+                        <p>Enter ABC+ notation to see the score</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>ABC+ Maestro Player &copy; 2026 • Built with Web Audio API</p>
+        </footer>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
