@@ -1,7 +1,7 @@
 {
-    "name": "abc-plus-maestro",
-    "version": "1.0.0",
-    "description": "High-performance ABC+ notation player with Web Audio synthesis",
+    "name": "universal-music-player",
+    "version": "0.1.0-beta",
+    "description": "Universal music player - ABC+, MusicXML, MIDI, LilyPond, audio, and video",
     "type": "module",
     "scripts": {
         "dev": "vite",
